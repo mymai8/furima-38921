@@ -18,17 +18,17 @@ has_many :orders
 
 ## Items テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: true |
-| name          | string     | null: false                    |
-| description   | text       | null: false                    |
-| category      | ActiveHash | null: false                    |
-| condition     | ActiveHash | null: false                    |
-| shipping_cost | ActiveHash | null: false                    |
-| prefecture    | ActiveHash | null: false                    |
-| shipping_day  | ActiveHash | null: false                    |
-| price         | string     | null: false                    |
+| Column                  | Type       | Options                        |
+| ----------------------- | ---------- | ------------------------------ |
+| user                    | references | null: false, foreign_key: true |
+| name                    | string     | null: false                    |
+| description             | text       | null: false                    |
+| category_id             | integer    | null: false                    |
+| condition_id            | integer    | null: false                    |
+| delivery_fee_payment_id | integer    | null: false                    |
+| prefecture_id           | integer    | null: false                    |
+| shipping_day_id         | integer    | null: false                    |
+| price                   | integer    | null: false                    |
 
 ### Association
 belongs_to :user
@@ -41,7 +41,7 @@ has_one :order
 | ---------------- | ---------- | ------------------------------ |
 | order            | references | null: false, foreign_key: true |
 | post_code        | string     | null: false                    |
-| prefecture       | ActiveHash | null: false                    |
+| prefecture_id    | integer    | null: false                    |
 | city             | string     | null: false                    |
 | block            | string     | null: false                    |
 | building_name    | string     |                                |
