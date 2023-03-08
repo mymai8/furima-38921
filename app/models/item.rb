@@ -30,5 +30,5 @@ class Item < ApplicationRecord
     validates :shipping_day_id
   end
 
-  validates :price, format: { with: /\A[0-9]+\z/, message: "is invalid. Input half-width characters" }
+  validates :price, numericality: { only_integer: true, message: "is invalid. Input half-width characters" }
 end
