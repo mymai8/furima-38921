@@ -127,7 +127,7 @@ RSpec.describe Item, type: :model do
       it '価格が全角だと出品できない' do
         @item.price = '３００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is out of setting range")
+        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters")
       end
       it '価格の範囲が、300円未満だと出品できない' do
         @item.price = 100
