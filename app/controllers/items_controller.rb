@@ -19,6 +19,11 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
+  end
+
   def edit
     unless @item.user_id == current_user.id && @item.order.nil?
       redirect_to root_path
